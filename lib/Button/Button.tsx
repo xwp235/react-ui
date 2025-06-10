@@ -24,7 +24,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
         href,
         children,
         ...restProps
-                                                                })=> {
+})=> {
     const isLink =  btnType === 'link'
     const classes = clsx('btn', className, {
         [`btn-${btnType}`]: btnType,

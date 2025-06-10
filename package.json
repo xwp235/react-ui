@@ -3,13 +3,26 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "main": "dist/index.es.js",
-  "module": "dist/index.es.js",
-  "unpkg": "dist/index.umd.js",
-  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "main": "dist/es/react-ui.es.js",
+  "module": "dist/es/react-ui.es.js",
+  "unpkg": "dist/umd/react-ui.umd.js",
+  "types": "dist/es/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/react-ui.es.js",
+      "require": "./dist/react-ui.umd.js"
+    },
+    "./style.css": "./dist/react-ui.css"
+  },
   "scripts": {
-    "build": "tsc -p tsconfig.json && vite build",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build-es": "tsc -p tsconfig.json && vite build --config vite.config.es.ts",
+    "build-umd": "tsc -p tsconfig.json && vite build --config vite.config.umd.ts",
+    "build": "pnpm build-es && pnpm build-umd"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -18,6 +31,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
+    "@types/node": "^22.15.30",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",
@@ -25,6 +39,8 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
+    "sass": "^1.89.1",
+    "shx": "^0.4.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
     "vite": "^6.3.5",

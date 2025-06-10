@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./dist/react-ui.min.css">
+</head>
+<body>
+<div id="root"></div>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="./dist/react-ui.min.js"></script>
+<script>
+    const rootNode = document.getElementById('root')
+    const btn = React.createElement(ReactUI.Button, null, 'Text from UMD')
+    console.log(btn)
+    const rootEl = ReactDOM.createRoot(rootNode)
+    console.log(rootEl)
+    rootEl.render(btn)
+</script>
+</body>
+</html>
