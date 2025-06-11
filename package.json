@@ -16,13 +16,14 @@
       "import": "./dist/react-ui.es.js",
       "require": "./dist/react-ui.umd.js"
     },
-    "./style.css": "./dist/react-ui.css"
+    "./style.css": "./dist/react-ui.min.css"
   },
   "scripts": {
     "lint": "eslint .",
     "build-es": "tsc -p tsconfig.json && vite build --config vite.config.es.ts",
     "build-umd": "tsc -p tsconfig.json && vite build --config vite.config.umd.ts",
-    "build": "pnpm build-es && pnpm build-umd"
+    "build-css": "vite build --config vite.config.css.ts",
+    "build": "pnpm build-es && pnpm build-umd && pnpm build-css"
   },
   "dependencies": {
     "clsx": "^2.1.1",

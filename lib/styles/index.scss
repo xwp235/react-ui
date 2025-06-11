@@ -1,15 +1,6 @@
-// config
-@import "variables";
-
 //layout
-@import "reboot";
-
-//mixin
-@import "mixin";
-
-// animation
-@import "animation";
+@use "reboot";
 
 // button
-@import '../Button/style';
+@use '../Button/style';
 
